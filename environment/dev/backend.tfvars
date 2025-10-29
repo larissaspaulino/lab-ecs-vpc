@@ -1,3 +1,3 @@
-bucket = "descomplicando-ecs-container-statefiles"
+bucket = "aws-lab-container-statefiles"
 key    = "vpc/dev/state"
 region = "us-east-1"
