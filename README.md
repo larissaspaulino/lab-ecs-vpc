@@ -12,6 +12,8 @@
 
 ``terraform apply --auto-approve -var-file=environment/dev/terraform.tfvars``
 
+``terraform destroy --auto-approve -var-file=environment/dev/terraform.tfvars``
+
 ## Referências
 
 [Doc Terraform AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
