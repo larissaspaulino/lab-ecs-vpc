@@ -35,7 +35,6 @@ resource "aws_subnet" "private_subnet_1c" {
 resource "aws_route_table" "private_internet_access" {
   vpc_id = aws_vpc.main.id
   tags = {
-    Name = format("%s-public", var.project_name)
+    Name = format("%s-private", var.project_name)
   }
 }
-
