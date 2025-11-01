@@ -39,3 +39,9 @@ resource "aws_route_table" "public_internet_access" {
     Name = format("%s-public", var.project_name)
   }
 }
+
+resource "aws_route" "public_access" {
+  route_table_id         = aws_route_table.public_internet_access.id
+  destination_cidr_block = "0.0.0.0/0" // todo tráfego de saída, que não fizer parte do range da VPC, manda para o IGW
+  gateway_id             = aws_internet_gateway.gw.id
+}
