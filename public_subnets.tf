@@ -1,7 +1,7 @@
 resource "aws_subnet" "public_subnet_1a" {
   vpc_id = aws_vpc.main.id
 
-  cidr_block        = "10.0.48.0/24" // 500 e poucos
+  cidr_block        = "10.0.48.0/24" // 500 e poucos IPs
   availability_zone = format("%sa", var.region)
 
   tags = {
@@ -31,3 +31,11 @@ resource "aws_subnet" "public_subnet_1c" {
   }
 }
 
+
+# ROUTE TABLE
+resource "aws_route_table" "public_internet_access" {
+  vpc_id = aws_vpc.main.id
+  tags = {
+    Name = format("%s-public", var.project_name)
+  }
+}
