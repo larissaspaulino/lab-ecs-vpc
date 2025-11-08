@@ -1,2 +1,2 @@
-project_name = "aws-lab-vpc"
+project_name = "lab-ecs"
 region       = "us-east-1"
