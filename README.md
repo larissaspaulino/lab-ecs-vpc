@@ -1,12 +1,16 @@
+## Commands
+
 ``brew install warrensbox/tap/tfswitch``
 
 ``tfswitch -l`` (escolher a versão do terraform desejada)
 
 ``aws configure`` (criado a access keys na AWS IAM)
 
-
+### Terraform commands
 
 ``terraform init -backend-config=environment/dev/backend.tfvars``
+
+``terraform init -reconfigure -backend-config=environment/dev/backend.tfvars``
 
 ``terraform plan -var-file=environment/dev/terraform.tfvars``
 
@@ -14,19 +18,18 @@
 
 ``terraform destroy --auto-approve -var-file=environment/dev/terraform.tfvars``
 
+#### Code style and validation
 
 ``terraform fmt``
+
 ``terraform validate``
 
-## Referências
+Tip: you can use git hook to run the above commands before commit
+
+## References
 
 [Doc Terraform AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
 
-
-<!-- BEGIN_TF_DOCS -->
-## Requirements
-
-No requirements.
 
 ## Providers
 
