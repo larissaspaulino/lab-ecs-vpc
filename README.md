@@ -1,16 +1,18 @@
-## Commands
+This project is a high availability architecture of a VPC on AWS using Terraform.
+
+## Install and configure
 
 ``brew install warrensbox/tap/tfswitch``
 
-``tfswitch -l`` (escolher a versão do terraform desejada)
+``tfswitch -l``
 
-``aws configure`` (criado a access keys na AWS IAM)
+``aws configure``
 
-### Terraform commands
+## Terraform commands
 
 ``terraform init -backend-config=environment/dev/backend.tfvars``
 
-``terraform init -reconfigure -backend-config=environment/dev/backend.tfvars``
+``terraform init -reconfigure -backend-config=environment/dev/backend.tfvars`` (The -reconfigure option disregards any existing configuration, preventing migration of any existing state - used when I had to change the backend bucket)
 
 ``terraform plan -var-file=environment/dev/terraform.tfvars``
 
@@ -18,9 +20,9 @@
 
 ``terraform destroy --auto-approve -var-file=environment/dev/terraform.tfvars``
 
-#### Code style and validation
+### Code style and validation
 
-``terraform fmt``
+``terraform fmt -recursive``
 
 ``terraform validate``
 
